@@ -3,7 +3,7 @@
 Author: Junyi Shi
 Version: 1.0
 Organization: EMC Corporation
-Date Created: 11/12/2013.
+Date Created: 11/18/2013.
 
 Description: This is a simple script for moving PFS from one project to the component team. Input is csv file.
   
@@ -24,8 +24,8 @@ headers.version = '1.0'
 
 
 #==================== Making a connection to Rally ====================
-config = {:workspace => "workspace"}
-config[:project] = "project"
+config = {:workspace => "Workspace 1"}
+config[:project] = "Jenny-test"
 config[:headers] = headers #from RallyAPI::CustomHttpHeader.new()
 
 @rally = RallyAPI::RallyRestJson.new(config)
@@ -116,7 +116,7 @@ def find_feature(feature_id)
       #puts h.inspect
       puts "FeatureID: #{h.FormattedID}"
       #puts h.Project
-      puts "ComponentTeam: #{h.ComponentTeam}"
+      puts "ComponentTeam #{h.ComponentTeam}"
       puts "DirectChildrenCount: #{h.DirectChildrenCount}"
       #puts h.UserStories.results
       #puts @userstory["ref"]
@@ -164,7 +164,8 @@ def find_UserStory(userStory)
       puts "Find #{res.FormattedID}"
       puts "Children number: #{res.Children.size}"
       #puts res.Childern
-      if (res.Children != nil)
+=begin
+  if (res.Children != nil)
         
         #update_UserStory(@scopingTeam,res.FormattedID)
         
@@ -176,11 +177,13 @@ def find_UserStory(userStory)
           update_UserStory(userStory_id)
           @iCount += 1
         }
+         end
+=end     
         #puts res.Children.results
         #find_UserStory(res.Children)
       #else
       #  return results
-      end
+     
    }
    else
       puts "No such user story #{userStory}"
