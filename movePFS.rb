@@ -9,7 +9,7 @@ Description: This is a simple script for moving PFS from one project to the comp
   
 =end
 
-require 'rally_api_emc_sso' 
+require 'rally_api' 
 require 'csv'
 
 if ARGV.size != 1
