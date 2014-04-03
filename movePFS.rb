@@ -24,8 +24,8 @@ headers.version = '1.0'
 
 
 #==================== Making a connection to Rally ====================
-config = {:workspace => "Workspace 1"}
-config[:project] = "Jenny-test"
+config = {:workspace => "workspace"}
+config[:project] = "project"
 config[:headers] = headers #from RallyAPI::CustomHttpHeader.new()
 
 @rally = RallyAPI::RallyRestJson.new(config)
